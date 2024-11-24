@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "CTU Social",
+    "slug": "frontend",
+    "scheme": "ctu-social",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["ios", "android"],
+    "assetBundlePatterns": ["**/*"],
+    "userInterfaceStyle": "light",
+    "ios": {
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow frontend to access your photos.",
+        "NSCameraUsageDescription": "Allow frontend to access your camera.",
+        "NSMicrophoneUsageDescription": "Allow frontend to use the microphone."
+      },
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ctu.social"
+    },
+    "android": {
+      "package": "com.ctu.social"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow ${frontend} to access your photos.",
+          "savePhotosPermission": "Allow ${frontend} to save photos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow ${frontend} to access your camera."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow ${frontend} to use the microphone."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "49e65299-098a-4607-a745-490de1828ed0"
+      }
+    }
+  }
+}
